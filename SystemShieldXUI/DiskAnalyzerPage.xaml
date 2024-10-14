@@ -1,0 +1,88 @@
+﻿<Page x:Class="SystemShieldXUI.SystemHealthAnalyzer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#2E2E2E">
+
+    <Page.Resources>
+        <!-- DropShadow replacement if you're missing a real effect -->
+        <DropShadowEffect x:Key="DropShadow" BlurRadius="10" ShadowDepth="4" Color="#66000000"/>
+    </Page.Resources>
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border Background="#3C3C3C"
+                CornerRadius="12"
+                Padding="30"
+                Width="880"
+                Height="580"
+                Effect="{StaticResource DropShadow}">
+
+            <StackPanel>
+
+                <TextBlock Text="Disk Health &amp; Usage"
+           FontSize="30"
+           FontWeight="Bold"
+           Foreground="White"
+           HorizontalAlignment="Center"
+           Margin="0,0,0,20"/>
+
+
+                <!-- Info Section -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
+                    <TextBlock Text="Drive: " FontWeight="Bold" Foreground="White" FontSize="16"/>
+                    <TextBlock x:Name="DriveLetterText" Foreground="#AAAAAA" FontSize="16" Margin="5,0,10,0"/>
+                    <TextBlock Text="Used: " FontWeight="Bold" Foreground="White" FontSize="16"/>
+                    <TextBlock x:Name="UsedSpaceText" Foreground="#AAAAAA" FontSize="16" Margin="5,0,10,0"/>
+                    <TextBlock Text="Free: " FontWeight="Bold" Foreground="White" FontSize="16"/>
+                    <TextBlock x:Name="FreeSpaceText" Foreground="#AAAAAA" FontSize="16" Margin="5,0,10,0"/>
+                    <TextBlock Text="Total: " FontWeight="Bold" Foreground="White" FontSize="16"/>
+                    <TextBlock x:Name="TotalSpaceText" Foreground="#AAAAAA" FontSize="16"/>
+                </StackPanel>
+
+                <!-- Usage Bar -->
+                <Border Background="#1F1F1F"
+                        Height="26"
+                        CornerRadius="6"
+                        Margin="0,0,0,15"
+                        Width="820">
+                    <Grid>
+                        <Rectangle x:Name="UsageBar"
+                                   Height="26"
+                                   Fill="#0078D7"
+                                   HorizontalAlignment="Left"/>
+                    </Grid>
+                </Border>
+
+                <!-- Health Status -->
+                <TextBlock x:Name="HealthStatusText"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           TextAlignment="Center"
+                           Margin="0,0,0,25"
+                           HorizontalAlignment="Center"/>
+
+                <!-- Top Disk Hogs -->
+                <TextBlock Text="Top Disk Usage (C:\\)"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,0,0,10"/>
+
+                <ListView x:Name="TopUsageList"
+                          Height="260"
+                          Background="#1F1F1F"
+                          Foreground="White"
+                          BorderBrush="#444"
+                          BorderThickness="1"
+                          FontSize="13">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Folder" DisplayMemberBinding="{Binding Name}" Width="400"/>
+                            <GridViewColumn Header="Size" DisplayMemberBinding="{Binding SizeFormatted}" Width="140"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

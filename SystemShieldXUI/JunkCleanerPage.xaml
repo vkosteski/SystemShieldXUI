@@ -1,0 +1,124 @@
+﻿<Page x:Class="SystemShieldXUI.OptimizerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#2E2E2E">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border Background="#3C3C3C"
+                CornerRadius="12"
+                Padding="30"
+                Width="900"
+                Height="540"
+                Effect="{DynamicResource DropShadow}">
+
+            <StackPanel>
+
+                <!-- Title -->
+                <TextBlock Text="System Optimizer"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,25"/>
+
+                <!-- Two-column layout -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Junk Cleaner -->
+                    <Border Grid.Column="0"
+                            Background="#2A2A2A"
+                            CornerRadius="10"
+                            Margin="10"
+                            Padding="20"
+                            BorderBrush="#444"
+                            BorderThickness="1">
+
+                        <StackPanel>
+                            <TextBlock Text="Junk Cleaner"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       Margin="0,0,0,15"/>
+
+                            <Button Content="Scan for Junk"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Click="ScanJunk_Click"
+                                    Width="180"
+                                    Height="38"
+                                    HorizontalAlignment="Left"/>
+
+                            <ListBox x:Name="JunkList"
+                                     Height="130"
+                                     Margin="0,10,0,10"
+                                     Background="#1F1F1F"
+                                     Foreground="White"
+                                     BorderBrush="#333"
+                                     BorderThickness="1"
+                                     FontSize="13"
+                                     Padding="5"/>
+
+                            <TextBlock x:Name="TotalSizeText"
+                                       Foreground="#AAAAAA"
+                                       FontSize="13"
+                                       Margin="0,0,0,10"/>
+
+                            <Button Content="Clean Junk"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Click="CleanJunk_Click"
+                                    Width="180"
+                                    Height="38"
+                                    HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- System Tweaks -->
+                    <Border Grid.Column="1"
+                            Background="#2A2A2A"
+                            CornerRadius="10"
+                            Margin="10"
+                            Padding="20"
+                            BorderBrush="#444"
+                            BorderThickness="1">
+
+                        <StackPanel>
+                            <TextBlock Text="System Tweaks"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       Margin="0,0,0,15"/>
+
+                            <CheckBox x:Name="BoostPerformanceCheck"
+Content="🚀  Boost System Performance"
+Style="{StaticResource StylishCheckBox}"
+Margin="0,10,0,0" FontSize="20"/>
+
+                            <CheckBox x:Name="FlushDNSCheck"
+                                      Content="🌐  Flush DNS Cache"
+                                      Style="{StaticResource StylishCheckBox}" FontSize="20" />
+
+                            <CheckBox x:Name="OptimizeNetworkCheck"
+          Content="📶  Optimize Network Throttle"
+          Style="{StaticResource StylishCheckBox}" FontSize="20" />
+
+                            <CheckBox x:Name="DisableStartupDelayCheck"
+                                      Content="⚡  Disable Startup Delay"
+                                      Style="{StaticResource StylishCheckBox}" FontSize="20" />
+
+                            <Button Content="Apply Tweaks"
+                                    Style="{StaticResource PrimaryButton}"
+                                    Width="246"
+                                    Height="68"
+                                    Margin="0,20,0,0"
+                                    Click="ApplyTweaks_Click"
+                                    HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

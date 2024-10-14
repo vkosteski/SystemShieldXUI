@@ -1,0 +1,9 @@
+﻿<Page x:Class="SystemShieldXUI.LogsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="LogsPage">
+    <Grid Background="#1E1E1E">
+        <TextBlock Text="Logs" Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0"/>
+        <!-- We’ll add CPU/RAM charts later here -->
+    </Grid>
+</Page>
