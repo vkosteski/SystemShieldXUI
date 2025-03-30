@@ -9,7 +9,6 @@
 ![1](https://github.com/user-attachments/assets/828946ea-ab7f-4507-b470-c1dac280da7a)
 
 **SystemShieldX** is a sleek, powerful system maintenance and diagnostic tool designed to optimize, protect, and inform.  
-It's a beautifully-designed alternative to tools like CCleaner — but with added muscle and a custom UI engine.
 
 ---
 
